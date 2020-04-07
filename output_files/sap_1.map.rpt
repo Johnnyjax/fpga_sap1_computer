@@ -1,0 +1,619 @@
+Analysis & Synthesis report for sap_1
+Fri Feb 21 07:08:09 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |sap1_top|bin2bcd:bin2bcd_unit|state_reg
+ 10. State Machine - |sap1_top|sap_1_2:sap1_unit|state_reg
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Registers Packed Into Inferred Megafunctions
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_4lg1:auto_generated
+ 17. Parameter Settings for User Entity Instance: sap_1_2:sap1_unit|altera_one_port_ram:ram
+ 18. Parameter Settings for Inferred Entity Instance: sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "bin2bcd:bin2bcd_unit"
+ 21. Port Connectivity Checks: "sap_1_2:sap1_unit"
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Feb 21 07:08:08 2020           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; sap_1                                           ;
+; Top-level Entity Name              ; sap1_top                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 191                                             ;
+;     Total combinational functions  ; 181                                             ;
+;     Dedicated logic registers      ; 72                                              ;
+; Total registers                    ; 72                                              ;
+; Total pins                         ; 61                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 128                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; sap1_top           ; sap_1              ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; altera_one_port_ram.vhd          ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/sap_1/altera_one_port_ram.vhd    ;         ;
+; sap_1_2.vhd                      ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/sap_1/sap_1_2.vhd                ;         ;
+; sap1_top.vhd                     ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/sap_1/sap1_top.vhd               ;         ;
+; bin2bcd.vhd                      ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/sap_1/bin2bcd.vhd                ;         ;
+; bin_to_sseg.vhd                  ; yes             ; User VHDL File               ; C:/Users/John/Documents/myFpgaProjects/sap_1/bin_to_sseg.vhd            ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_4lg1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/John/Documents/myFpgaProjects/sap_1/db/altsyncram_4lg1.tdf     ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 191      ;
+;                                             ;          ;
+; Total combinational functions               ; 181      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 106      ;
+;     -- 3 input functions                    ; 53       ;
+;     -- <=2 input functions                  ; 22       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 165      ;
+;     -- arithmetic mode                      ; 16       ;
+;                                             ;          ;
+; Total registers                             ; 72       ;
+;     -- Dedicated logic registers            ; 72       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 61       ;
+; Total memory bits                           ; 128      ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 80       ;
+; Total fan-out                               ; 1016     ;
+; Average fan-out                             ; 3.16     ;
++---------------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+; |sap1_top                                    ; 181 (0)           ; 72 (0)       ; 128         ; 0            ; 0       ; 0         ; 61   ; 0            ; |sap1_top                                                                                               ; work         ;
+;    |bin2bcd:bin2bcd_unit|                    ; 40 (40)           ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|bin2bcd:bin2bcd_unit                                                                          ; work         ;
+;    |bin_to_sseg:bcd0_unit|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|bin_to_sseg:bcd0_unit                                                                         ; work         ;
+;    |bin_to_sseg:bcd1_unit|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|bin_to_sseg:bcd1_unit                                                                         ; work         ;
+;    |bin_to_sseg:bcd2_unit|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|bin_to_sseg:bcd2_unit                                                                         ; work         ;
+;    |bin_to_sseg:bcd3_unit|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|bin_to_sseg:bcd3_unit                                                                         ; work         ;
+;    |sap_1_2:sap1_unit|                       ; 113 (113)         ; 37 (37)      ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|sap_1_2:sap1_unit                                                                             ; work         ;
+;       |altera_one_port_ram:ram|              ; 0 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|sap_1_2:sap1_unit|altera_one_port_ram:ram                                                     ; work         ;
+;          |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0                                ; work         ;
+;             |altsyncram_4lg1:auto_generated| ; 0 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |sap1_top|sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_4lg1:auto_generated ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                             ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_4lg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128  ; None ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |sap1_top|bin2bcd:bin2bcd_unit|state_reg        ;
++----------------+----------------+--------------+----------------+
+; Name           ; state_reg.done ; state_reg.op ; state_reg.idle ;
++----------------+----------------+--------------+----------------+
+; state_reg.idle ; 0              ; 0            ; 0              ;
+; state_reg.op   ; 0              ; 1            ; 1              ;
+; state_reg.done ; 1              ; 0            ; 1              ;
++----------------+----------------+--------------+----------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |sap1_top|sap_1_2:sap1_unit|state_reg                                                                                                                                                                                                                                                                                                                                                 ;
++------------------------+---------------------+-----------------------+-----------------------+-----------------------+----------------------+----------------------+-----------------------+-----------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------+-----------------+--------------------+
+; Name                   ; state_reg.mem_write ; state_reg.execute_lda ; state_reg.execute_hlt ; state_reg.execute_out ; state_reg.execute_jz ; state_reg.execute_jc ; state_reg.execute_jmp ; state_reg.execute_ldi ; state_reg.execute_sta2 ; state_reg.execute_sta ; state_reg.execute_sub ; state_reg.execute_add ; state_reg.execute_nop ; state_reg.decode ; state_reg.fetch ; state_reg.reset_pc ;
++------------------------+---------------------+-----------------------+-----------------------+-----------------------+----------------------+----------------------+-----------------------+-----------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------+-----------------+--------------------+
+; state_reg.reset_pc     ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 0                  ;
+; state_reg.fetch        ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 1               ; 1                  ;
+; state_reg.decode       ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 1                ; 0               ; 1                  ;
+; state_reg.execute_nop  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 1                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_add  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 1                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_sub  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 1                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_sta  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 1                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_sta2 ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 1                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_ldi  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 1                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_jmp  ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 1                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_jc   ; 0                   ; 0                     ; 0                     ; 0                     ; 0                    ; 1                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_jz   ; 0                   ; 0                     ; 0                     ; 0                     ; 1                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_out  ; 0                   ; 0                     ; 0                     ; 1                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_hlt  ; 0                   ; 0                     ; 1                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.execute_lda  ; 0                   ; 1                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
+; state_reg.mem_write    ; 1                   ; 0                     ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                ; 0               ; 1                  ;
++------------------------+---------------------+-----------------------+-----------------------+-----------------------+----------------------+----------------------+-----------------------+-----------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------+-----------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                              ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal               ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+; sap_1_2:sap1_unit|memory_leds[0]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|memory_leds[1]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|memory_leds[2]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|memory_leds[3]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|memory_leds[4]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|memory_leds[5]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|memory_leds[6]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|memory_leds[7]                    ; sap_1_2:sap1_unit|mem_addr_reg[3] ; yes                    ;
+; sap_1_2:sap1_unit|mem_addr[0]                       ; sap_1_2:sap1_unit|mem_addr[3]     ; yes                    ;
+; sap_1_2:sap1_unit|mem_addr[1]                       ; sap_1_2:sap1_unit|mem_addr[3]     ; yes                    ;
+; sap_1_2:sap1_unit|mem_addr[2]                       ; sap_1_2:sap1_unit|mem_addr[3]     ; yes                    ;
+; sap_1_2:sap1_unit|mem_addr[3]                       ; sap_1_2:sap1_unit|mem_addr[3]     ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                                   ;                        ;
++-----------------------------------------------------+-----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; sap_1_2:sap1_unit|output_reg[0..7]       ; Lost fanout                            ;
+; sap_1_2:sap1_unit|state_reg.execute_sta2 ; Lost fanout                            ;
+; bin2bcd:bin2bcd_unit|state_reg.done      ; Stuck at GND due to stuck port data_in ;
+; sap_1_2:sap1_unit|state_reg.execute_nop  ; Lost fanout                            ;
+; Total Number of Removed Registers = 11   ;                                        ;
++------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 72    ;
+; Number of registers using Synchronous Clear  ; 19    ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 72    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                          ;
++----------------------------------------------------------+-----------------------------------------------------+------+
+; Register Name                                            ; Megafunction                                        ; Type ;
++----------------------------------------------------------+-----------------------------------------------------+------+
+; sap_1_2:sap1_unit|altera_one_port_ram:ram|data_reg[0..7] ; sap_1_2:sap1_unit|altera_one_port_ram:ram|ram_rtl_0 ; RAM  ;
++----------------------------------------------------------+-----------------------------------------------------+------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |sap1_top|bin2bcd:bin2bcd_unit|bcd0_reg[0]   ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |sap1_top|bin2bcd:bin2bcd_unit|p2s_reg[2]    ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |sap1_top|bin2bcd:bin2bcd_unit|bcd3_reg[3]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |sap1_top|bin2bcd:bin2bcd_unit|bcd2_reg[1]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |sap1_top|bin2bcd:bin2bcd_unit|bcd1_reg[1]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |sap1_top|bin2bcd:bin2bcd_unit|bcd1_reg[0]   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |sap1_top|sap_1_2:sap1_unit|ac_reg[6]        ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |sap1_top|sap_1_2:sap1_unit|ac_reg[1]        ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |sap1_top|sap_1_2:sap1_unit|pc_reg[3]        ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |sap1_top|sap_1_2:sap1_unit|memory_write_reg ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sap1_top|bin2bcd:bin2bcd_unit|Selector22    ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; No         ; |sap1_top|sap_1_2:sap1_unit|Selector17       ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 4 LEs                ; 32 LEs                 ; No         ; |sap1_top|sap_1_2:sap1_unit|mem_addr[2]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0|altsyncram_4lg1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                     ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sap_1_2:sap1_unit|altera_one_port_ram:ram ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; addr_width     ; 4     ; Signed Integer                                                ;
+; data_width     ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                             ;
+; WIDTH_A                            ; 8                    ; Untyped                                             ;
+; WIDTHAD_A                          ; 4                    ; Untyped                                             ;
+; NUMWORDS_A                         ; 16                   ; Untyped                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WIDTH_B                            ; 8                    ; Untyped                                             ;
+; WIDTHAD_B                          ; 4                    ; Untyped                                             ;
+; NUMWORDS_B                         ; 16                   ; Untyped                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                             ;
+; CBXI_PARAMETER                     ; altsyncram_4lg1      ; Untyped                                             ;
++------------------------------------+----------------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                           ;
++-------------------------------------------+----------------------------------------------------------------+
+; Name                                      ; Value                                                          ;
++-------------------------------------------+----------------------------------------------------------------+
+; Number of entity instances                ; 1                                                              ;
+; Entity Instance                           ; sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                      ;
+;     -- WIDTH_A                            ; 8                                                              ;
+;     -- NUMWORDS_A                         ; 16                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                   ;
+;     -- WIDTH_B                            ; 8                                                              ;
+;     -- NUMWORDS_B                         ; 16                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                       ;
++-------------------------------------------+----------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:bin2bcd_unit"                                                                     ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; bin[12..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ready      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; done_tick  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sap_1_2:sap1_unit"                                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; pc_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dr_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ar_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cf_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; zf_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; mem_wr_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; addr_sw[3] ; Input  ; Info     ; Stuck at GND                                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Feb 21 07:08:04 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sap_1 -c sap_1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file sap_1.vhd
+    Info (12022): Found design unit 1: sap_1-arch
+    Info (12023): Found entity 1: sap_1
+Info (12021): Found 3 design units, including 1 entities, in source file altera_one_port_ram.vhd
+    Info (12022): Found design unit 1: altera_one_port_ram-beh_arch1
+    Info (12022): Found design unit 2: altera_one_port_ram-beh_arch2
+    Info (12023): Found entity 1: altera_one_port_ram
+Info (12021): Found 2 design units, including 1 entities, in source file sap_1_2.vhd
+    Info (12022): Found design unit 1: sap_1_2-arch
+    Info (12023): Found entity 1: sap_1_2
+Info (12021): Found 2 design units, including 1 entities, in source file sap1_top.vhd
+    Info (12022): Found design unit 1: sap1_top-arch
+    Info (12023): Found entity 1: sap1_top
+Info (12021): Found 2 design units, including 1 entities, in source file bin2bcd.vhd
+    Info (12022): Found design unit 1: bin2bcd-arch
+    Info (12023): Found entity 1: bin2bcd
+Info (12021): Found 2 design units, including 1 entities, in source file bin_to_sseg.vhd
+    Info (12022): Found design unit 1: bin_to_sseg-test
+    Info (12023): Found entity 1: bin_to_sseg
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/mem_test.vhd
+    Info (12022): Found design unit 1: mem_test-arch
+    Info (12023): Found entity 1: mem_test
+Info (12127): Elaborating entity "sap1_top" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "LEDR[9..8]" at sap1_top.vhd(10)
+Info (12129): Elaborating entity "sap_1_2" using architecture "A:arch" for hierarchy "sap_1_2:sap1_unit"
+Warning (10541): VHDL Signal Declaration warning at sap_1_2.vhd(18): used implicit default value for signal "mem_wr_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10492): VHDL Process Statement warning at sap_1_2.vhd(85): signal "memory_write" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at sap_1_2.vhd(86): signal "mem_addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at sap_1_2.vhd(82): inferring latch(es) for signal or variable "memory_leds", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "mem_addr[0]" at sap_1_2.vhd(188)
+Info (10041): Inferred latch for "mem_addr[1]" at sap_1_2.vhd(188)
+Info (10041): Inferred latch for "mem_addr[2]" at sap_1_2.vhd(188)
+Info (10041): Inferred latch for "mem_addr[3]" at sap_1_2.vhd(188)
+Info (10041): Inferred latch for "memory_leds[0]" at sap_1_2.vhd(82)
+Info (10041): Inferred latch for "memory_leds[1]" at sap_1_2.vhd(82)
+Info (10041): Inferred latch for "memory_leds[2]" at sap_1_2.vhd(82)
+Info (10041): Inferred latch for "memory_leds[3]" at sap_1_2.vhd(82)
+Info (10041): Inferred latch for "memory_leds[4]" at sap_1_2.vhd(82)
+Info (10041): Inferred latch for "memory_leds[5]" at sap_1_2.vhd(82)
+Info (10041): Inferred latch for "memory_leds[6]" at sap_1_2.vhd(82)
+Info (10041): Inferred latch for "memory_leds[7]" at sap_1_2.vhd(82)
+Info (12128): Elaborating entity "altera_one_port_ram" for hierarchy "sap_1_2:sap1_unit|altera_one_port_ram:ram"
+Info (12129): Elaborating entity "bin2bcd" using architecture "A:arch" for hierarchy "bin2bcd:bin2bcd_unit"
+Info (12128): Elaborating entity "bin_to_sseg" for hierarchy "bin_to_sseg:bcd3_unit"
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "sap_1_2:sap1_unit|altera_one_port_ram:ram|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 4
+        Info (286033): Parameter NUMWORDS_A set to 16
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 4
+        Info (286033): Parameter NUMWORDS_B set to 16
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "4"
+    Info (12134): Parameter "NUMWORDS_A" = "16"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "4"
+    Info (12134): Parameter "NUMWORDS_B" = "16"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4lg1.tdf
+    Info (12023): Found entity 1: altsyncram_4lg1
+Warning (13012): Latch sap_1_2:sap1_unit|mem_addr[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sap_1_2:sap1_unit|state_reg.execute_jz
+Warning (13012): Latch sap_1_2:sap1_unit|mem_addr[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sap_1_2:sap1_unit|state_reg.execute_jz
+Warning (13012): Latch sap_1_2:sap1_unit|mem_addr[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sap_1_2:sap1_unit|state_reg.execute_jz
+Warning (13012): Latch sap_1_2:sap1_unit|mem_addr[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sap_1_2:sap1_unit|state_reg.execute_jz
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+Info (17049): 10 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 264 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 195 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4658 megabytes
+    Info: Processing ended: Fri Feb 21 07:08:09 2020
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+

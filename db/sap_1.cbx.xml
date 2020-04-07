@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="sap_1">
+		<CBX_INST_ENTRY INSTANCE_NAME="|sap1_top|sap_1_2:sap1_unit|altera_one_port_ram:ram|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_4lg1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,25 @@
+
+State Machine - |sap1_top|bin2bcd:bin2bcd_unit|state_reg
+Name state_reg.done state_reg.op state_reg.idle 
+state_reg.idle 0 0 0 
+state_reg.op 0 1 1 
+state_reg.done 1 0 1 
+
+State Machine - |sap1_top|sap_1_2:sap1_unit|state_reg
+Name state_reg.mem_write state_reg.execute_lda state_reg.execute_hlt state_reg.execute_out state_reg.execute_jz state_reg.execute_jc state_reg.execute_jmp state_reg.execute_ldi state_reg.execute_sta2 state_reg.execute_sta state_reg.execute_sub state_reg.execute_add state_reg.execute_nop state_reg.decode state_reg.fetch state_reg.reset_pc 
+state_reg.reset_pc 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state_reg.fetch 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state_reg.decode 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state_reg.execute_nop 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state_reg.execute_add 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state_reg.execute_sub 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state_reg.execute_sta 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state_reg.execute_sta2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state_reg.execute_ldi 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state_reg.execute_jmp 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state_reg.execute_jc 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state_reg.execute_jz 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.execute_out 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.execute_hlt 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.execute_lda 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_reg.mem_write 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

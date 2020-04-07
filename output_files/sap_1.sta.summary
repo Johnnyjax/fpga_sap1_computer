@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -6.612
+TNS   : -287.343
+
+Type  : Slow Model Setup 'SW[9]'
+Slack : -2.858
+TNS   : -15.277
+
+Type  : Slow Model Setup 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : -2.613
+TNS   : -9.950
+
+Type  : Slow Model Hold 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : -1.856
+TNS   : -6.876
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -0.259
+TNS   : -1.036
+
+Type  : Slow Model Hold 'SW[9]'
+Slack : 1.375
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : -0.374
+TNS   : -0.658
+
+Type  : Slow Model Removal 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : -0.230
+TNS   : -0.823
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -2.064
+TNS   : -192.815
+
+Type  : Slow Model Minimum Pulse Width 'SW[9]'
+Slack : -1.631
+TNS   : -1.631
+
+Type  : Slow Model Minimum Pulse Width 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -2.532
+TNS   : -77.466
+
+Type  : Fast Model Setup 'SW[9]'
+Slack : -1.078
+TNS   : -5.729
+
+Type  : Fast Model Setup 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : -0.666
+TNS   : -2.477
+
+Type  : Fast Model Hold 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : -1.274
+TNS   : -4.896
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -0.736
+TNS   : -10.753
+
+Type  : Fast Model Hold 'SW[9]'
+Slack : 1.173
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : -0.027
+TNS   : -0.027
+
+Type  : Fast Model Removal 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : 0.473
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.627
+TNS   : -154.730
+
+Type  : Fast Model Minimum Pulse Width 'SW[9]'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Fast Model Minimum Pulse Width 'sap_1_2:sap1_unit|state_reg.execute_jc'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
